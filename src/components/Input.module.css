@@ -1,0 +1,24 @@
+.label {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  color: var(--clr-neutral-four);
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.input {
+  max-width: 100%;
+  padding: 0 1.5rem;
+  border: 1px solid var(--clr-neutral-three);
+  border-radius: 0.8rem;
+  color: var(--clr-neutral-five);
+  height: 5.4rem;
+  line-height: 5.4rem;
+  font-size: 2rem;
+}
+
+.input::placeholder {
+  color: var(--clr-neutral-four);
+  font-size: 2rem;
+}

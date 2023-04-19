@@ -17,6 +17,7 @@ html {
 body {
   font-size: 3.2rem;
   background-color: var(--clr-neutral-two);
+  padding: 8.8rem 1.6rem 23.8rem;
 }
 
 /* Box sizing rules */

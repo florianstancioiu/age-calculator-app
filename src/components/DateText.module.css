@@ -1,0 +1,11 @@
+.wrapper {
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.value {
+  color: var(--clr-primary-one);
+  display: inline-block;
+  margin-right: 1.2rem;
+}
