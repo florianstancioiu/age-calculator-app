@@ -22,3 +22,16 @@
   color: var(--clr-neutral-four);
   font-size: 2rem;
 }
+
+@media screen and (min-width: 841px) {
+  .input {
+    height: 7.2rem;
+    line-height: 7.2rem;
+    padding: 0 2.5rem;
+    font-size: 3rem;
+  }
+
+  .input::placeholder {
+    font-size: 3rem;
+  }
+}
