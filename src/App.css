@@ -16,6 +16,7 @@ html {
 
 body {
   font-size: 3.2rem;
+  background-color: var(--clr-neutral-two);
 }
 
 /* Box sizing rules */
