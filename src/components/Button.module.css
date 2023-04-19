@@ -27,8 +27,25 @@
   height: 6.5rem;
   border-radius: 50%;
   background-color: var(--clr-primary-one);
+  transition: all 0.3s ease-out;
+}
+
+.icon-wrapper:hover {
+  background-color: var(--clr-neutral-five);
 }
 
 .icon-wrapper img {
   max-width: 2.5rem;
+}
+
+@media screen and (min-width: 841px) {
+  .wrapper {
+    margin-bottom: 0;
+  }
+
+  .icon-wrapper {
+    margin-right: 0;
+    width: 9.6rem;
+    height: 9.6rem;
+  }
 }

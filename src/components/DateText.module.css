@@ -9,3 +9,10 @@
   display: inline-block;
   margin-right: 1.2rem;
 }
+
+@media screen and (min-width: 841px) {
+  .wrapper {
+    font-size: 9.5rem;
+    line-height: 9.5rem;
+  }
+}

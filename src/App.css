@@ -20,6 +20,14 @@ body {
   padding: 8.8rem 1.6rem 23.8rem;
 }
 
+@media screen and (min-width: 841px) {
+  body {
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
