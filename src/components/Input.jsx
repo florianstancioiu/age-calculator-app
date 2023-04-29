@@ -1,8 +1,20 @@
 import classes from './Input.module.css';
 
-const Input = ({ title, placeholder, value, validate, error }) => {
+const Input = ({
+  title,
+  placeholder,
+  value,
+  hasError,
+  errorTitle,
+  onChange,
+  onBlur,
+}) => {
+  const wrapperClasses = hasError
+    ? `${classes.wrapper} ${classes['has-error']}`
+    : classes.wrapper;
+
   return (
-    <div className={classes.wrapper}>
+    <div className={wrapperClasses}>
       <label className={classes.label} htmlFor={title}>
         {title}
       </label>
@@ -10,9 +22,12 @@ const Input = ({ title, placeholder, value, validate, error }) => {
         className={classes.input}
         id={title}
         type='text'
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
       />
-      {error && <p className={classes.error}>{error}</p>}
+      {hasError && <p className={classes['error-text']}>{errorTitle}</p>}
     </div>
   );
 };

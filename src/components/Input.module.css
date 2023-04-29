@@ -23,6 +23,17 @@
   font-size: 2rem;
 }
 
+.has-error .label {
+  color: var(--clr-primary-two);
+}
+
+.has-error .error-text {
+  color: var(--clr-primary-two);
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 841px) {
   .input {
     height: 7.2rem;
