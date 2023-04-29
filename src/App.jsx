@@ -3,10 +3,12 @@ import './App.css';
 
 function App() {
   return (
-    <main>
+    <>
       <h1 className='hidden'>Age calculator app</h1>
-      <Calculator />
-    </main>
+      <main>
+        <Calculator />
+      </main>
+    </>
   );
 }
 
