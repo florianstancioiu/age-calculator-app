@@ -46,7 +46,7 @@ const Calculator = () => {
     };
 
     const dateString = `${yearValue}-${monthValue}-${dayValue}`;
-    let theDate = new Date(dateString);
+    const theDate = new Date(dateString);
 
     if (!dateIsValid(theDate)) {
       setDateIsInvalid(true);
@@ -57,14 +57,16 @@ const Calculator = () => {
     const yearsDiff = moment().diff(theDate, 'years');
     setResultYears(yearsDiff);
 
-    theDate = moment(theDate).add(yearsDiff, 'years');
+    const theDatePlusYears = moment(theDate).add(yearsDiff, 'years');
 
-    const monthsDiff = moment().diff(theDate, 'months');
+    const monthsDiff = moment().diff(theDatePlusYears, 'months');
     setResultMonths(monthsDiff);
 
-    theDate = moment(theDate).add(monthsDiff, 'months');
-
-    setResultDays(moment().diff(theDate, 'days'));
+    const theDatePlusYearsAndMonths = moment(theDatePlusYears).add(
+      monthsDiff,
+      'months'
+    );
+    setResultDays(moment().diff(theDatePlusYearsAndMonths, 'days'));
   };
 
   return (
