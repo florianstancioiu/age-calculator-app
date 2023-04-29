@@ -8,6 +8,7 @@ import yearValidator from '../validators/yearValidator';
 import monthValidator from '../validators/monthValidator';
 import dayValidator from '../validators/dayValidator';
 import classes from './Calculator.module.css';
+import moment from 'moment';
 
 const Calculator = () => {
   const {
@@ -35,21 +36,35 @@ const Calculator = () => {
   } = useInput(dayValidator);
 
   const [resultYears, setResultYears] = useState('--');
-  const [resultMonths, setResultMonth] = useState('--');
+  const [resultMonths, setResultMonths] = useState('--');
   const [resultDays, setResultDays] = useState('--');
   const [dateIsInvalid, setDateIsInvalid] = useState(false);
 
   const btnClickHandler = () => {
-    function dateIsValid(date) {
+    const dateIsValid = (date) => {
       return date instanceof Date && !isNaN(date);
-    }
+    };
 
     const dateString = `${yearValue}-${monthValue}-${dayValue}`;
-    if (!dateIsValid(new Date(dateString))) {
+    let theDate = new Date(dateString);
+
+    if (!dateIsValid(theDate)) {
       setDateIsInvalid(true);
     } else {
       setDateIsInvalid(false);
     }
+
+    const yearsDiff = moment().diff(theDate, 'years');
+    setResultYears(yearsDiff);
+
+    theDate = moment(theDate).add(yearsDiff, 'years');
+
+    const monthsDiff = moment().diff(theDate, 'months');
+    setResultMonths(monthsDiff);
+
+    theDate = moment(theDate).add(monthsDiff, 'months');
+
+    setResultDays(moment().diff(theDate, 'days'));
   };
 
   return (
