@@ -50,6 +50,7 @@ const Calculator = () => {
 
     if (!dateIsValid(theDate)) {
       setDateIsInvalid(true);
+      return false;
     } else {
       setDateIsInvalid(false);
     }
